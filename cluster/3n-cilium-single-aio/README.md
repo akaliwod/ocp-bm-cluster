@@ -35,9 +35,9 @@ Additionally:
 - web server
 - http proxy settings (if any)
 
-[Tasks](https://wwwin-github.cisco.com/emear-telcocloud/iserver/blob/master/doc/ocp/Operations.md) can be used for further customization post installation.
+[Tasks](https://github.com/datacenter/iserver/blob/main/doc/ocp/Operations.md) can be used for further customization post installation.
 
-Refer to cluster.json [documentation](https://wwwin-github.cisco.com/emear-telcocloud/iserver/blob/master/doc/ocp/bm/input_data_cluster_aio.md) to understand all configurable options and defaults.
+Refer to cluster.json [documentation](https://github.com/datacenter/iserver/blob/main/doc/ocp/bm/input_data_cluster_aio.md) to understand all configurable options and defaults.
 
 ## [single.yaml](./single.yaml)
 

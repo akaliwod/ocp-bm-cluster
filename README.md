@@ -1,6 +1,6 @@
 # OpenShift Installation
 
-This repo contains templates of cluster, fabric and tasks definitions that can be used with [iserver](https://wwwin-github.cisco.com/emear-telcocloud/iserver/blob/master/doc/ocp/BareMetalCluster.md) to install OpenShift cluster on bare metal Cisco USC compute infrastructure.
+This repo contains templates of cluster, fabric and tasks definitions that can be used with [iserver](https://github.com/datacenter/iserver/blob/main/doc/ocp/BareMetalCluster.md) to install OpenShift cluster on bare metal Cisco USC compute infrastructure.
 
 ## HowTo
 
@@ -10,7 +10,7 @@ Step 2: Copy cluster template directory that matches your deployment scenario to
 
 Step 3: Edit cluster definition files there. 
 
-Step 4: (optional) Add [tasks](https://wwwin-github.cisco.com/emear-telcocloud/iserver/blob/master/doc/ocp/Operations.md) for post-installation cluster configuration.
+Step 4: (optional) Add [tasks](https://github.com/datacenter/iserver/blob/main/doc/ocp/Operations.md) for post-installation cluster configuration.
 
 Step 5: Deploy the cluster 
 
@@ -33,19 +33,19 @@ OVNKubernetes | 3 | Bonded | [Link](./cluster/3n-ovn-bonding-aio/) | [Link](./cl
 
 Notes:
 - All files and manifests defining cluster installation intent must be in a single directory
-- One-time [configuration](https://wwwin-github.cisco.com/emear-telcocloud/iserver/blob/master/doc/ocp/Console.md) of OpenShift Console authentication required.
+- One-time [configuration](https://github.com/datacenter/iserver/blob/main/doc/ocp/Console.md) of OpenShift Console authentication required.
 - No support for 2 node cluster
-- For 3+ cluster, start with 3 node template and add extra servers. Define [role property](https://wwwin-github.cisco.com/emear-telcocloud/iserver/blob/master/doc/ocp/bm/input_data_server_role.md) to assign servers to master or worker role
+- For 3+ cluster, start with 3 node template and add extra servers. Define [role property](https://github.com/datacenter/iserver/blob/main/doc/ocp/bm/input_data_server_role.md) to assign servers to master or worker role
 - Bonding support for two interfaces 
 - [bonding.yaml](./bonding.md) and [single.yaml](./single.md) can be modified as required, make sure that variables [resolve](./variables.md)
 - all templates define interface with vlan, refer to [single_no_vlan](./single_no_vlan.md) as example without vlan
-- Cilium EE manifests must be unpacked into manifests subdirectory, they are modified by default, check [here](https://wwwin-github.cisco.com/emear-telcocloud/iserver/blob/master/doc/ocp/bm/cilium_fixup.md) for details
+- Cilium EE manifests must be unpacked into manifests subdirectory, they are modified by default, check [here](https://github.com/datacenter/iserver/blob/main/doc/ocp/bm/cilium_fixup.md) for details
 - you can add any custom yaml file to manifests as long as you keep one CRD per yaml file (no '---' in yaml)
-- all templates use local web server, check [here](https://wwwin-github.cisco.com/emear-telcocloud/iserver/blob/master/doc/ocp/bm/input_data_web.md) to understand different web server deployment options
+- all templates use local web server, check [here](https://github.com/datacenter/iserver/blob/main/doc/ocp/bm/input_data_web.md) to understand different web server deployment options
 - the only difference between all-in-one and file-per-section templates is the number of definition files, 
     - in case of all-in-one, all definitions end up in cluster.json file;
     - in case of file-per-section, you have different pieces of configuration intent spread across files
-- refer to [documentation](https://wwwin-github.cisco.com/emear-telcocloud/iserver/blob/master/doc/ocp/BareMetalCluster.md) for configuration syntax and options
+- refer to [documentation](https://github.com/datacenter/iserver/blob/main/doc/ocp/BareMetalCluster.md) for configuration syntax and options
 - all templates define servers with direct redfish access, in case of FabricInterconnect refer to example below
 
 ```

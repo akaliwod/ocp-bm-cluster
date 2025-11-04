@@ -27,7 +27,7 @@ Defines the key cluster parameters
 - dns ip
 - dns search domain
 
-Refer to cluster.json [documentation](https://wwwin-github.cisco.com/emear-telcocloud/iserver/blob/master/doc/ocp/bm/input_data_cluster_base.md) to understand all configurable options and defaults.
+Refer to cluster.json [documentation](https://github.com/datacenter/iserver/blob/main/doc/ocp/bm/input_data_cluster_base.md) to understand all configurable options and defaults.
 
 ## [server.json](./server.json)
 
@@ -42,9 +42,9 @@ Keep kube:true settings for the single server, this is so-called management node
 - bashrc following proxy settings
 - kubeconfig uploaded to .kube/config
 
-[Tasks](https://wwwin-github.cisco.com/emear-telcocloud/iserver/blob/master/doc/ocp/Operations.md) can be used for post-installation cluster customization.
+[Tasks](https://github.com/datacenter/iserver/blob/main/doc/ocp/Operations.md) can be used for post-installation cluster customization.
 
-Refer to server.json [documentation](https://wwwin-github.cisco.com/emear-telcocloud/iserver/blob/master/doc/ocp/bm/input_data_server.md) to understand all configurable options.
+Refer to server.json [documentation](https://github.com/datacenter/iserver/blob/main/doc/ocp/bm/input_data_server.md) to understand all configurable options.
 
 ## [redfish.json](./redfish.json)
 
@@ -81,7 +81,7 @@ Defines local web server that has been launched using for example
 sudo docker run -it --rm -d -p 8080:80 --name image -v /home/user/image:/usr/share/nginx/html nginx
 ```
 
-Refer to web.json [documentation](https://wwwin-github.cisco.com/emear-telcocloud/iserver/blob/master/doc/ocp/bm/input_data_web.md) to understand all configurable options.
+Refer to web.json [documentation](https://github.com/datacenter/iserver/blob/main/doc/ocp/bm/input_data_web.md) to understand all configurable options.
 
 ## [proxy.json](./proxy.json)
 
