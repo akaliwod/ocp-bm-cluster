@@ -1,0 +1,39 @@
+{
+    "name": "my-cluster",
+    "base_dns_domain": "ocp.domain.com",
+    "ntp": "ntp.domain.com",
+    "network_type": "Cilium",
+    "openshift_version": "4.19.6",
+    "http_proxy": "http://proxy.domain.com:80",
+    "https_proxy": "http://proxy.domain.com:80",
+    "no_proxy": "domain.com",
+    "ssh_public_key": "ssh-ed25519 AAAAC... username@host",
+    "machine_network_gateway": "10.10.10.254/24",
+    "dns_ip": "30.30.30.30",
+    "dns_search": "domain.com",
+    "server": [
+        {
+            "hostname": "my-cluster-node",    
+            "redfish": {
+                "endpoint_ip": "10.50.50.50",
+                "username": "user",
+                "password": "pass"
+            },
+            "ssh": {
+                "ip": "10.10.10.10"
+            },
+            "interface": [
+                {
+                    "name": "eno5",
+                    "mac": "11:11:11:11:11:11"
+                }
+            ],
+            "nmstate": "single.yaml"
+        }
+    ],
+    "web_server": {
+        "ip": "localhost",
+        "image_base_url": "http://10.10.10.10:8080",
+        "image_upload_directory": "/home/user/image"
+    }
+}

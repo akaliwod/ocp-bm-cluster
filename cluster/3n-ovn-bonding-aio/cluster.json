@@ -1,0 +1,86 @@
+{
+    "name": "my-cluster",
+    "base_dns_domain": "ocp.domain.com",
+    "ntp": "ntp.domain.com",
+    "openshift_version": "4.19.6",
+    "http_proxy": "http://proxy.domain.com:80",
+    "https_proxy": "http://proxy.domain.com:80",
+    "no_proxy": "domain.com",
+    "ssh_public_key": "ssh-ed25519 AAAAC... username@host",
+    "api": "10.10.10.30",
+    "ingress": "10.10.10.31",
+    "server": [
+        {
+            "hostname": "my-cluster-node1",
+    
+            "redfish": {
+                "endpoint_ip": "10.50.50.50",
+                "username": "user",
+                "password": "pass"
+            },
+            "ssh": {
+                "ip": "10.10.10.10"
+            },
+            "interface": [
+                {
+                    "name": "eno5",
+                    "mac": "11:11:11:11:11:11"
+                },
+                {
+                    "name": "eno6",
+                    "mac": "11:11:11:11:11:12"
+                }
+            ],
+            "nmstate": "bonding.yaml"
+        },
+        {
+            "hostname": "my-cluster-node2",
+            "redfish": {
+                "endpoint_ip": "10.50.50.51",
+                "username": "user",
+                "password": "pass"
+            },
+            "ssh": {
+                "ip": "10.10.10.11"
+            },
+            "interface": [
+                {
+                    "name": "eno5",
+                    "mac": "22:11:11:11:11:11"
+                },
+                {
+                    "name": "eno6",
+                    "mac": "22:11:11:11:11:12"
+                }
+            ],
+            "nmstate": "bonding.yaml"
+        },
+        {
+            "hostname": "my-cluster-node3",
+            "redfish": {
+                "endpoint_ip": "10.50.50.52",
+                "username": "user",
+                "password": "pass"
+            },
+            "ssh": {
+                "ip": "10.10.10.12"
+            },
+            "interface": [
+                {
+                    "name": "eno5",
+                    "mac": "33:11:11:11:11:11"
+                },
+                {
+                    "name": "eno6",
+                    "mac": "33:11:11:11:11:12"
+                }
+            ],
+            "nmstate": "bonding.yaml"
+        }
+    ],
+    "web_server": {
+        "ip": "localhost",
+        "image_base_url": "http://10.10.10.10:8080",
+        "image_upload_directory": "/home/user/image"
+    }
+}

@@ -1,0 +1,19 @@
+[
+    {
+        "hostname": "my-cluster-node",
+        "redfish": {
+            "endpoint_ip": "10.50.50.50"
+        },
+        "ssh": {
+            "ip": "10.10.10.10"
+        },
+        "vlan": 800,
+        "interface": [
+            {
+                "name": "eno5",
+                "mac": "11:11:11:11:11:11"
+            }
+        ],
+        "nmstate": "single.yaml"
+    }
+]

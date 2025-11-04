@@ -1,0 +1,10 @@
+{
+    "name": "my-cluster",
+    "base_dns_domain": "ocp.domain.com",
+    "ntp": "ntp.domain.com",
+    "network_type": "Cilium",
+    "openshift_version": "4.19.6",
+    "machine_network_gateway": "10.10.10.254/24",
+    "dns_ip": "30.30.30.30",
+    "dns_search": "domain.com"
+}

@@ -1,0 +1,64 @@
+[
+    {
+        "hostname": "my-cluster-node1",
+
+        "redfish": {
+            "endpoint_ip": "10.50.50.50"
+        },
+        "ssh": {
+            "ip": "10.10.10.10"
+        },
+        "vlan": 800,
+        "interface": [
+            {
+                "name": "eno5",
+                "mac": "11:11:11:11:11:11"
+            },
+            {
+                "name": "eno6",
+                "mac": "11:11:11:11:11:12"
+            }
+        ],
+        "nmstate": "bonding.yaml"
+    },
+    {
+        "hostname": "my-cluster-node2",
+        "redfish": {
+            "endpoint_ip": "10.50.50.51"
+        },
+        "ssh": {
+            "ip": "10.10.10.11"
+        },
+        "interface": [
+            {
+                "name": "eno5",
+                "mac": "22:11:11:11:11:11"
+            },
+            {
+                "name": "eno6",
+                "mac": "22:11:11:11:11:12"
+            }
+        ],
+        "nmstate": "bonding.yaml"
+    },
+    {
+        "hostname": "my-cluster-node3",
+        "redfish": {
+            "endpoint_ip": "10.50.50.52"
+        },
+        "ssh": {
+            "ip": "10.10.10.12"
+        },
+        "interface": [
+            {
+                "name": "eno5",
+                "mac": "33:11:11:11:11:11"
+            },
+            {
+                "name": "eno6",
+                "mac": "33:11:11:11:11:12"
+            }
+        ],
+        "nmstate": "bonding.yaml"
+    }
+]
