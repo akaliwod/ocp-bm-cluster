@@ -45,11 +45,23 @@ Using example as documentation
             {
                 "id": 1,
                 "ip": "10.20.20.51/24",
-                "vlan": 666
+                "vlan": 666,
+                "route": [
+                    {
+                        "cidr": "10.66.66.0/24",
+                        "nh": "10.20.20.254"
+                    }
+                ]
             },
             {
                 "id": 2,
-                "ip": "10.30.30.65/28"
+                "ip": "10.30.30.65/28",
+                "route": [
+                    {
+                        "cidr": "10.77.77.0/24",
+                        "nh": "10.30.30.78"
+                    }
+                ]
             }
         ],
         "nmstate": "bonding.yaml"
@@ -93,11 +105,23 @@ Using example as documentation
             {
                 "id": 1,
                 "ip": "10.20.20.52/24",
-                "vlan": 666
+                "vlan": 666,
+                "route": [
+                    {
+                        "cidr": "10.66.66.0/24",
+                        "nh": "10.20.20.254"
+                    }
+                ]
             },
             {
                 "id": 2,
-                "ip": "10.30.30.66/28"
+                "ip": "10.30.30.66/28",
+                "route": [
+                    {
+                        "cidr": "10.77.77.0/24",
+                        "nh": "10.30.30.78"
+                    }
+                ]
             }
         ],
         "nmstate": "bonding.yaml"
@@ -141,11 +165,23 @@ Using example as documentation
             {
                 "id": 1,
                 "ip": "10.20.20.53/24",
-                "vlan": 666
+                "vlan": 666,
+                "route": [
+                    {
+                        "cidr": "10.66.66.0/24",
+                        "nh": "10.20.20.254"
+                    }
+                ]
             },
             {
                 "id": 2,
-                "ip": "10.30.30.67/28"
+                "ip": "10.30.30.67/28",
+                "route": [
+                    {
+                        "cidr": "10.77.77.0/24",
+                        "nh": "10.30.30.78"
+                    }
+                ]
             }
         ],
         "nmstate": "bonding.yaml"
@@ -182,7 +218,11 @@ Using example as documentation
     "GROUP_1_IP": "10.20.20.51",
     "GROUP_1_PREFIX": "24",
     "GROUP_2_IP": "10.30.30.65",
-    "GROUP_2_PREFIX": "28"
+    "GROUP_2_PREFIX": "28",
+    "GROUP_1_CIDR_1": "10.66.66.0/24",
+    "GROUP_1_NH_1": "10.20.20.254",
+    "GROUP_2_CIDR_1": "10.77.77.0/24",
+    "GROUP_2_NH_1": "10.30.30.78"
 }
 ```
 
@@ -213,7 +253,11 @@ Using example as documentation
     "GROUP_1_IP": "10.20.20.52",
     "GROUP_1_PREFIX": "24",
     "GROUP_2_IP": "10.30.30.66",
-    "GROUP_2_PREFIX": "28"
+    "GROUP_2_PREFIX": "28",
+    "GROUP_1_CIDR_1": "10.66.66.0/24",
+    "GROUP_1_NH_1": "10.20.20.254",
+    "GROUP_2_CIDR_1": "10.77.77.0/24",
+    "GROUP_2_NH_1": "10.30.30.78"
 }
 ```
 
@@ -244,7 +288,11 @@ Using example as documentation
     "GROUP_1_IP": "10.20.20.53",
     "GROUP_1_PREFIX": "24",
     "GROUP_2_IP": "10.30.30.67",
-    "GROUP_2_PREFIX": "28"
+    "GROUP_2_PREFIX": "28",
+    "GROUP_1_CIDR_1": "10.66.66.0/24",
+    "GROUP_1_NH_1": "10.20.20.254",
+    "GROUP_2_CIDR_1": "10.77.77.0/24",
+    "GROUP_2_NH_1": "10.30.30.78"
 }
 ```
 
@@ -323,6 +371,12 @@ routes:
   - destination: 0.0.0.0/0
     next-hop-address: ${GW}
     next-hop-interface: ${BOND}.${VLAN}
+  - destination: ${GROUP_1_CIDR_1}
+    next-hop-address: ${GROUP_1_NH_1}
+    next-hop-interface: ${GROUP_1_BOND}.${GROUP_1_VLAN}
+  - destination: ${GROUP_2_CIDR_1}
+    next-hop-address: ${GROUP_2_NH_1}
+    next-hop-interface: ${GROUP_2_IFNAME}
 dns-resolver:
   config:
     search:
@@ -408,6 +462,12 @@ routes:
   - destination: 0.0.0.0/0
     next-hop-address: 10.10.10.14
     next-hop-interface: bond0.701
+  - destination: 10.66.66.0/24
+    next-hop-address: 10.20.20.254
+    next-hop-interface: bond1.666
+  - destination: 10.77.77.0/24
+    next-hop-address: 10.30.30.78
+    next-hop-interface: eno11
 dns-resolver:
   config:
     search:
@@ -491,6 +551,12 @@ routes:
   - destination: 0.0.0.0/0
     next-hop-address: 10.10.10.14
     next-hop-interface: bond0.701
+  - destination: 10.66.66.0/24
+    next-hop-address: 10.20.20.254
+    next-hop-interface: bond1.666
+  - destination: 10.77.77.0/24
+    next-hop-address: 10.30.30.78
+    next-hop-interface: eno11
 dns-resolver:
   config:
     search:
@@ -574,6 +640,12 @@ routes:
   - destination: 0.0.0.0/0
     next-hop-address: 10.10.10.14
     next-hop-interface: bond0.701
+  - destination: 10.66.66.0/24
+    next-hop-address: 10.20.20.254
+    next-hop-interface: bond1.666
+  - destination: 10.77.77.0/24
+    next-hop-address: 10.30.30.78
+    next-hop-interface: eno11
 dns-resolver:
   config:
     search:

@@ -27,7 +27,7 @@ IP | server.ip |
 PREFIX | prefix part from machine_config_gateway cidr |
 GW | ip part from machine_config_gateway cidr |
 VLAN | server.vlan | if defined
-BOND_MEMBER_X | server.interface[X].name | if multiple interfaces
+BOND_MEMBER_X | server.interface[X-1].name | if multiple interfaces
 IFNAME | server.interface[0].name | if one interface
 BOND | server.bond | if multiple interfaces, defaults to bond0
 BOND_MODE | server.bond_mode | if multiple interfaces, defaults to 802.3ad
@@ -46,10 +46,12 @@ Variable Key | Variable Value | Note
 GROUP_N_IP | ip part of group.ip | if defined 
 GROUP_N_PREFIX | prefix part of group.ip | if defined 
 GROUP_N_VLAN | group.vlan | if defined
-GROUP_N_BOND_MEMBER_X | server.interface[X].name | if multiple interfaces in group
+GROUP_N_BOND_MEMBER_X | server.interface[X-1].name | if multiple interfaces in group
 GROUP_N_IFNAME | server.interface[0].name | if one interface in group
 GROUP_N_BOND | group.bond | if multiple interfaces, defaults to bondN
 GROUP_N_BOND_MODE | group.bond_mode | if multiple interfaces, defaults to 802.3ad
 GROUP_N_LACP_RATE | group.lacp_rate | if multiple interfaces, defaults to slow
+GROUP_N_CIDR_X | group.route[X-1].cidr | if route defined
+GROUP_N_NH_X | group.route[X-1].nh | if route defined
 
 [[Back]](./README.md)
