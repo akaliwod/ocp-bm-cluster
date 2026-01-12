@@ -38,6 +38,7 @@ Notes:
 - For 3+ cluster, start with 3 node template and add extra servers. Define [role property](https://github.com/datacenter/iserver/blob/main/doc/ocp/bm/input_data_server_role.md) to assign servers to master or worker role
 - Bonding support for two interfaces 
 - [bonding.yaml](./bonding.md) and [single.yaml](./single.md) can be modified as required, make sure that variables [resolve](./variables.md)
+- check [group support](./group.md) for more complex networking setups
 - all templates define interface with vlan, refer to [single_no_vlan](./single_no_vlan.md) as example without vlan
 - Cilium EE manifests must be unpacked into manifests subdirectory, they are modified by default, check [here](https://github.com/datacenter/iserver/blob/main/doc/ocp/bm/cilium_fixup.md) for details
 - you can add any custom yaml file to manifests as long as you keep one CRD per yaml file (no '---' in yaml)
