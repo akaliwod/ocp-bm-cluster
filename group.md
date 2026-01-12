@@ -1,6 +1,23 @@
 # Complex nmstate configurations with groups
 
-Using example as documentation
+Server interface
+- server.interface without group is consider main kube interface
+- server.interface.group must be defined in server.group.id
+
+Server group
+- group must have at least one interface reference defined in server.interface
+- if group has single interface, then it is non-bonding
+- if group has multiple interface, then it is bonded 
+- bonding vs. non-bonding impacts interface name variable generate
+- bonded groups have bond_mode and lacp_rate attributes default is not user-defined
+- group interface bond interface id is the same as group.id
+- group.id must be greater or equal 1
+- group.vlan is optional
+- group.ip is optional unless group.route list is defined
+- group.ip is in cidr format
+- group.route is list of entries that must have cidr and nh properties
+- group.route.cidr must be ipv4 cidr
+- group.route.nh must be ipv4 address and must belong to group.ip subnet
 
 ## server.json
 
